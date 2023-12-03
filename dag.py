@@ -4,7 +4,7 @@ from airflow import DAG
 from airflow.operators.python_operator import PythonOperator
 from airflow.utils.dates import days_ago
 from datetime import datetime
-from youutbe_etl import run_youtube_etl
+from youtube_etl import run_youtube_etl
 
 default_args = {
     'owner': 'airflow',
@@ -18,7 +18,7 @@ default_args = {
 }
 
 dag = DAG(
-    'youutbe_dag',
+    'youtube_dag',
     default_args=default_args,
     description='Our first DAG with ETL process!',
     schedule_interval=timedelta(days=1),
